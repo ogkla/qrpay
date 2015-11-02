@@ -17,6 +17,7 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print("QR CODE VIEW CONTROLLER");
         captureQrCode()
         createQrView()
     }
@@ -54,6 +55,7 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         videoPreviewLayer?.frame = view.layer.bounds
         view.layer.addSublayer(videoPreviewLayer!)
         captureSession!.startRunning()
+        print("capture session running")
         
     }
 
@@ -77,8 +79,13 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             qrCodeFrameView?.frame = barCodeObject!.bounds
             if metadataObjects.stringValue != nil {
                 print(metadataObjects.stringValue)
+                makePayment()
             }
         }
+        
+    }
+    
+    func makePayment() {
         
     }
 

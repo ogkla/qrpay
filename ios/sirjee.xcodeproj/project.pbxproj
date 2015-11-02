@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		276A8F4DDF7CDF28368C099B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED879AC9FE836E5657C680FA /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4B4B810A1BE540F9005FC078 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B81091BE540F9005FC078 /* AppDelegate.swift */; };
-		4B4B810C1BE540F9005FC078 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B810B1BE540F9005FC078 /* ViewController.swift */; };
+		4B4B810C1BE540F9005FC078 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B810B1BE540F9005FC078 /* QRViewController.swift */; };
 		4B4B810F1BE540F9005FC078 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4B810D1BE540F9005FC078 /* Main.storyboard */; };
 		4B4B81111BE540F9005FC078 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4B81101BE540F9005FC078 /* Assets.xcassets */; };
 		4B4B81141BE540F9005FC078 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4B81121BE540F9005FC078 /* LaunchScreen.storyboard */; };
 		4B4B811F1BE540F9005FC078 /* sirjeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B811E1BE540F9005FC078 /* sirjeeTests.swift */; };
 		4B4B812A1BE540F9005FC078 /* sirjeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B81291BE540F9005FC078 /* sirjeeUITests.swift */; };
 		4B54540D1BE6724300CC94BB /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B54540C1BE6724300CC94BB /* LandingViewController.swift */; };
+		4B54540F1BE6D26C00CC94BB /* RequirementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B54540E1BE6D26C00CC94BB /* RequirementViewController.swift */; };
+		4B5454121BE6D3BD00CC94BB /* Seeker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5454111BE6D3BD00CC94BB /* Seeker.swift */; };
+		4B5454141BE6D5EE00CC94BB /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5454131BE6D5EE00CC94BB /* FormViewController.swift */; };
+		4B5454161BE6EEEA00CC94BB /* SeekerQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5454151BE6EEEA00CC94BB /* SeekerQRViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +43,7 @@
 		194A7B15A6EC53CC8DA126E5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4B4B81061BE540F9005FC078 /* sirjee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sirjee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4B81091BE540F9005FC078 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4B4B810B1BE540F9005FC078 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4B4B810B1BE540F9005FC078 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		4B4B810E1BE540F9005FC078 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B4B81101BE540F9005FC078 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B4B81131BE540F9005FC078 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +55,10 @@
 		4B4B81291BE540F9005FC078 /* sirjeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sirjeeUITests.swift; sourceTree = "<group>"; };
 		4B4B812B1BE540F9005FC078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B54540C1BE6724300CC94BB /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		4B54540E1BE6D26C00CC94BB /* RequirementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequirementViewController.swift; sourceTree = "<group>"; };
+		4B5454111BE6D3BD00CC94BB /* Seeker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeker.swift; sourceTree = "<group>"; };
+		4B5454131BE6D5EE00CC94BB /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		4B5454151BE6EEEA00CC94BB /* SeekerQRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeekerQRViewController.swift; sourceTree = "<group>"; };
 		6B003F6079DBEC00507D4FE9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		ED879AC9FE836E5657C680FA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -106,9 +114,13 @@
 		4B4B81081BE540F9005FC078 /* sirjee */ = {
 			isa = PBXGroup;
 			children = (
+				4B5454101BE6D3AA00CC94BB /* models */,
 				4B4B81091BE540F9005FC078 /* AppDelegate.swift */,
-				4B4B810B1BE540F9005FC078 /* ViewController.swift */,
+				4B4B810B1BE540F9005FC078 /* QRViewController.swift */,
 				4B4B810D1BE540F9005FC078 /* Main.storyboard */,
+				4B5454151BE6EEEA00CC94BB /* SeekerQRViewController.swift */,
+				4B5454131BE6D5EE00CC94BB /* FormViewController.swift */,
+				4B54540E1BE6D26C00CC94BB /* RequirementViewController.swift */,
 				4B54540C1BE6724300CC94BB /* LandingViewController.swift */,
 				4B4B81101BE540F9005FC078 /* Assets.xcassets */,
 				4B4B81121BE540F9005FC078 /* LaunchScreen.storyboard */,
@@ -133,6 +145,14 @@
 				4B4B812B1BE540F9005FC078 /* Info.plist */,
 			);
 			path = sirjeeUITests;
+			sourceTree = "<group>";
+		};
+		4B5454101BE6D3AA00CC94BB /* models */ = {
+			isa = PBXGroup;
+			children = (
+				4B5454111BE6D3BD00CC94BB /* Seeker.swift */,
+			);
+			name = models;
 			sourceTree = "<group>";
 		};
 		86E341EEE024F85A3A8580CF /* Frameworks */ = {
@@ -333,9 +353,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B4B810C1BE540F9005FC078 /* ViewController.swift in Sources */,
+				4B5454161BE6EEEA00CC94BB /* SeekerQRViewController.swift in Sources */,
+				4B5454141BE6D5EE00CC94BB /* FormViewController.swift in Sources */,
+				4B4B810C1BE540F9005FC078 /* QRViewController.swift in Sources */,
 				4B54540D1BE6724300CC94BB /* LandingViewController.swift in Sources */,
+				4B54540F1BE6D26C00CC94BB /* RequirementViewController.swift in Sources */,
 				4B4B810A1BE540F9005FC078 /* AppDelegate.swift in Sources */,
+				4B5454121BE6D3BD00CC94BB /* Seeker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
