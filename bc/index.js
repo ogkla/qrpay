@@ -29,6 +29,10 @@ app.post('/v1/money/createmappedcard', function (req, res) {
     money.createCardMapping(req, res);
 });
 
+app.post('/v1/money/enquiremappedcard', function (req, res) {
+    money.enquireCardMapping(req, res);
+});
+
 server = http.createServer(app);
 server.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

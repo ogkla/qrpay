@@ -14,7 +14,8 @@ var getFromUserAcount,
     testKey = "ERjubJ3eMUmKscVjjdnD5anAIhHqFN2Ye1irjL5a57092308!4772764a4e4c353033764d2b35575155704c654f56673d3d",
     keyPath,
     pathLib = require('path'),
-    createCardMapping;
+    createCardMapping,
+    enquireCardMapping;
 
 keyPath = pathLib.dirname(process.mainModule.filename) + "/keys/mastercard.test.com.key";
 
@@ -28,9 +29,6 @@ generatePrivateKeyForTest = function(env){
     return pem.toString('utf8')
 };
 
-transferService = new transferServiceClass.TransferService(testKey, generatePrivateKeyForTest(environment.sandbox), environment.sandbox);
-cardMapService = new cardMappingServiceClass.CardMappingService(testKey, generatePrivateKeyForTest(environment.sandbox), environment.sandbox);
-
 getFromUserAcount = function (req, res) {
     var requestObj, transfer;
     requestObj = {
@@ -42,15 +40,15 @@ getFromUserAcount = function (req, res) {
                 "161222"
             ],
             "TransactionReference": [
-                "4000000401010101011"
+                "4000000601010101011"
             ],
             "FundingCard": [
                 {
                     "AccountNumber": [
-                        5198946623783177
+                        5184680430000006
                     ],
                     "ExpiryMonth": [
-                        "11"
+                        "09"
                     ],
                     "ExpiryYear": [
                         "2019"
@@ -149,35 +147,13 @@ getFromUserAcount = function (req, res) {
     console.log("");
     console.log("########################################");
     console.log("");
-    transferService.getTransfer(requestObj);
 
-//    //Channel -  Accepted values are W-Web/Internet, M-Mobile, B-Bank Branch, K-Unmanned Kiosk
-//
-//    builder = new xml2js.Builder();
-//    bodyObjXML = builder.buildObject(bodyObjJSON);
-//    reqObj = {
-//        method: "POST",
-//        uri: "https://sandbox.api.mastercard.com/moneysend/v2/transfer?Format=XML",
-//        headers: {
-//            'Authorization': 'OAuth oauth_body_hash="W/bXAJvyRgqMjppBfKIj3/UG4TE=",oauth_consumer_key="ERjubJ3eMUmKscVjjdnD5anAIhHqFN2Ye1irjL5a57092308!4772764a4e4c353033764d2b35575155704c654f56673d3d",oauth_nonce="kqjqHwzH",oauth_signature="OvW3JBu4A%2FKG8aB8fJ%2Fw%2Fz9WsY1kcaA2EK%2BSB6zOA9PWWfKsEmuetp3yZ7JSVb7y5GxrPWIRF6wzYct5D9yzgtZHJXP%2FpeSUJniOW0Cg7xZMRNCPFY7cwoR72OFbSC%2F%2FiHO1tmu6zF%2BmQB0yLwMJc437dPgw6ydzIUY9xqk8Me5jfjpzl0%2BNBuBgt8J2xMArE21ARiEo6SfjywXDFNEJ1rz2kHoh4ZdLUBDhBaXOitn4LrpvdRBX1SSFa1Bo08nLktnsJzavATCq8tIGaswVCBa2embbz9aoZ%2F6n7IHFBcYkwEgSW%2BexxhCfslk%2BeCWIyBRIggnvr%2FYs1CA65jiUXw%3D%3D",oauth_signature_method="RSA-SHA1",oauth_timestamp="1446420896",oauth_version="1.0"',
-//            'User-Agent': 'MC API OAuth Framework v1.0-node',
-//            'content-type' : 'application/xml;charset=UTF-8',
-//            'content-length': bodyObjXML.length
-//        },
-//        'body': bodyObjXML,
-//        'cert': fs.readFileSync('/Users/siddesh/projects/test/mastercard-api-node-master/common/SSLCerts/EnTrust/cacert.pem')
-//    };
-//
-//    request(reqObj, function (error, response, body) {
-//        try {
-//            console.log("error " + error) ;
-//            console.log("response " + response) ;
-//            console.log("body " + body) ;
-//
-//        } catch (e) {
-//            console.log("Exception");
-//        }
-//    });
+    function transferServiceCallBack (result) {
+        res.send(JSON.stringify(result));
+    }
+
+    transferService = new transferServiceClass.TransferService(testKey, generatePrivateKeyForTest(environment.sandbox), environment.sandbox, transferServiceCallBack);
+    transferService.getTransfer(requestObj);
 };
 
 putToHomelessAcount = function () {
@@ -187,14 +163,58 @@ putToHomelessAcount = function () {
 createCardMapping = function (req, res) {
     var requestObj;
     requestObj = {
+        CreateMappingRequest: {
+            SubscriberId: "varunmagnite_1@yandex.com",
+            SubscriberType: "EMAIL_ADDRESS",
+            AccountUsage:  "SEND_RECV",
+            DefaultIndicator: "T",
+            Alias: "varunmagnite1 Card",
+            ICA: "009674",
+            AccountNumber: 5184680430000006,
+            ExpiryDate: "201909",
+            CardholderFullName: {
+                CardholderFirstName: "John",
+                CardholderMiddleName: "Q",
+                CardholderLastName: "Public"
+            },
+            Address: {
+                Line1: "123 Main Street",
+                Line2: "#5A",
+                City: "OFallon",
+                CountrySubdivision: "MO",
+                PostalCode: "63368",
+                Country: "USA"
+            },
+            DateOfBirth: "19460102"
+        }
+    };
+
+    function cardMapServiceCallBack (result) {
+        res.send(JSON.stringify(result));
+    }
+
+    cardMapService = new cardMappingServiceClass.CardMappingService(testKey, generatePrivateKeyForTest(environment.sandbox), environment.sandbox, cardMapServiceCallBack);
+    cardMapService.getCreateMapping(requestObj);
+
+};
+
+enquireCardMapping = function (req, res) {
+    var requestObj;
+    requestObj = {
         InquireMappingRequest: {
-            SubscriberId: "varunmagnite@yandex.com",
+            SubscriberId: "varunmagnite_1@yandex.com",
             SubscriberType: "EMAIL_ADDRESS",
             AccountUsage: "SEND_RECV",
-            Alias: "My test card",
+            Alias: "varunmagnite1 Card",
             DataResponseFlag: "3"
         }
     };
+
+    function cardMapServiceCallBack (result) {
+        res.send(JSON.stringify(result));
+    }
+
+    cardMapService = new cardMappingServiceClass.CardMappingService(testKey, generatePrivateKeyForTest(environment.sandbox), environment.sandbox, cardMapServiceCallBack);
     cardMapService.getInquireMapping(requestObj);
 
 };
@@ -202,5 +222,6 @@ createCardMapping = function (req, res) {
 module.exports = {
     getFromUserAcount: getFromUserAcount,
     putToHomelessAcount: putToHomelessAcount,
-    createCardMapping: createCardMapping
+    createCardMapping: createCardMapping,
+    enquireCardMapping: enquireCardMapping
 };

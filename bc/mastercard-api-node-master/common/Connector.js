@@ -210,7 +210,7 @@ _doConnect = function(url, requestMethod, authHeader, body, callback){
 _checkResponse = function(body, statusCode, callback){
   if (statusCode > ERROR_STATUS_BOUNDARY){
     require('xml2js').Parser().parseString(body, function (err, res) {
-        console.log(JSON.stringify(res));
+      console.log(JSON.stringify(res));
     });
     throw new Error();
   } else {
