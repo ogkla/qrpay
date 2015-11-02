@@ -178,7 +178,16 @@ _doConnect = function(url, requestMethod, authHeader, body, callback){
     }
   }
 
-    options.agent = new HTTPS.Agent(options);
+  options.agent = new HTTPS.Agent(options);
+  console.log("########################################");
+  console.log("");
+  console.log("options hostname " + options.hostname);
+  console.log("options path " + options.path);
+  console.log("options method " + options.method);
+  console.log("options headers " + JSON.stringify(options.headers));
+  console.log("");
+  console.log("########################################");
+
   var request = HTTPS.request(options, function(response){
     var retBody = '';
     var statusCode = response.statusCode;
@@ -188,6 +197,7 @@ _doConnect = function(url, requestMethod, authHeader, body, callback){
       _checkResponse(retBody, statusCode, callback);
     });
   }).on('error', function(error){
+      console.log("Got error " + error);
       throw new Error(error);
     });
 

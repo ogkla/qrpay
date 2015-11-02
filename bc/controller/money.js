@@ -5,13 +5,16 @@ var getFromUserAcount,
     putToHomelessAcount,
     transferServiceClass = require('../mastercard-api-node-master/services/moneysend/TransferService'),
     environment = require('../mastercard-api-node-master/common/Environment'),
-    service,
+    cardMappingServiceClass = require('../mastercard-api-node-master/services/moneysend/CardMappingService'),
+    transferService,
+    cardMapService,
     generatePrivateKeyForTest,
     fs = require("fs"),
     request = require("request"),
     testKey = "ERjubJ3eMUmKscVjjdnD5anAIhHqFN2Ye1irjL5a57092308!4772764a4e4c353033764d2b35575155704c654f56673d3d",
     keyPath,
-    pathLib = require('path');
+    pathLib = require('path'),
+    createCardMapping;
 
 keyPath = pathLib.dirname(process.mainModule.filename) + "/keys/mastercard.test.com.key";
 
@@ -25,8 +28,8 @@ generatePrivateKeyForTest = function(env){
     return pem.toString('utf8')
 };
 
-service = new transferServiceClass.TransferService(testKey, generatePrivateKeyForTest(environment.sandbox), environment.sandbox);
-
+transferService = new transferServiceClass.TransferService(testKey, generatePrivateKeyForTest(environment.sandbox), environment.sandbox);
+cardMapService = new cardMappingServiceClass.CardMappingService(testKey, generatePrivateKeyForTest(environment.sandbox), environment.sandbox);
 
 getFromUserAcount = function (req, res) {
     var requestObj, transfer;
@@ -146,7 +149,7 @@ getFromUserAcount = function (req, res) {
     console.log("");
     console.log("########################################");
     console.log("");
-    service.getTransfer(requestObj);
+    transferService.getTransfer(requestObj);
 
 //    //Channel -  Accepted values are W-Web/Internet, M-Mobile, B-Bank Branch, K-Unmanned Kiosk
 //
@@ -181,7 +184,23 @@ putToHomelessAcount = function () {
 
 };
 
+createCardMapping = function (req, res) {
+    var requestObj;
+    requestObj = {
+        InquireMappingRequest: {
+            SubscriberId: "varunmagnite@yandex.com",
+            SubscriberType: "EMAIL_ADDRESS",
+            AccountUsage: "SEND_RECV",
+            Alias: "My test card",
+            DataResponseFlag: "3"
+        }
+    };
+    cardMapService.getInquireMapping(requestObj);
+
+};
+
 module.exports = {
     getFromUserAcount: getFromUserAcount,
-    putToHomelessAcount: putToHomelessAcount
+    putToHomelessAcount: putToHomelessAcount,
+    createCardMapping: createCardMapping
 };

@@ -25,6 +25,9 @@ app.post('/v1/money/puttohomelessacount', function (req, res) {
     money.putToHomelessAcount(req, res);
 });
 
+app.post('/v1/money/createmappedcard', function (req, res) {
+    money.createCardMapping(req, res);
+});
 
 server = http.createServer(app);
 server.listen(app.get('port'), function () {
