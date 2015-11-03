@@ -1,0 +1,392 @@
+{
+    "enquiredRsult": {
+        "org": {
+            "InquireMapping": {
+                "RequestId": [
+                    "509031"
+                ],
+                "Mappings": [
+                    {
+                        "Mapping": [
+                            {
+                                "MappingId": [
+                                    "21764"
+                                ],
+                                "SubscriberId": [
+                                    "testorg_varun@yandex.com"
+                                ],
+                                "SubscriberType": [
+                                    "EMAIL_ADDRESS"
+                                ],
+                                "AccountUsage": [
+                                    "SENDING"
+                                ],
+                                "DefaultIndicator": [
+                                    "T"
+                                ],
+                                "Alias": [
+                                    "testorg_varun Card"
+                                ],
+                                "ICA": [
+                                    "9674"
+                                ],
+                                "AccountNumber": [
+                                    "5184680430000006"
+                                ],
+                                "CardholderFullName": [
+                                    {
+                                        "CardholderFirstName": [
+                                            "Test"
+                                        ],
+                                        "CardholderMiddleName": [
+                                            "O"
+                                        ],
+                                        "CardholderLastName": [
+                                            "Varun"
+                                        ]
+                                    }
+                                ],
+                                "Address": [
+                                    {
+                                        "Line1": [
+                                            "123 Main Street"
+                                        ],
+                                        "Line2": [
+                                            "#5A"
+                                        ],
+                                        "City": [
+                                            "OFallon"
+                                        ],
+                                        "CountrySubdivision": [
+                                            "MO"
+                                        ],
+                                        "PostalCode": [
+                                            "63368"
+                                        ],
+                                        "Country": [
+                                            "USA"
+                                        ]
+                                    }
+                                ],
+                                "DateOfBirth": [
+                                    "19460102"
+                                ],
+                                "ExpiryDate": [
+                                    "201909"
+                                ]
+                            },
+                            {
+                                "MappingId": [
+                                    "21765"
+                                ],
+                                "SubscriberId": [
+                                    "testorg_varun@yandex.com"
+                                ],
+                                "SubscriberType": [
+                                    "EMAIL_ADDRESS"
+                                ],
+                                "AccountUsage": [
+                                    "RECEIVING"
+                                ],
+                                "DefaultIndicator": [
+                                    "T"
+                                ],
+                                "Alias": [
+                                    "testorg_varun Card"
+                                ],
+                                "ICA": [
+                                    "9674"
+                                ],
+                                "AccountNumber": [
+                                    "5184680430000006"
+                                ],
+                                "CardholderFullName": [
+                                    {
+                                        "CardholderFirstName": [
+                                            "Test"
+                                        ],
+                                        "CardholderMiddleName": [
+                                            "O"
+                                        ],
+                                        "CardholderLastName": [
+                                            "Varun"
+                                        ]
+                                    }
+                                ],
+                                "Address": [
+                                    {
+                                        "Line1": [
+                                            "123 Main Street"
+                                        ],
+                                        "Line2": [
+                                            "#5A"
+                                        ],
+                                        "City": [
+                                            "OFallon"
+                                        ],
+                                        "CountrySubdivision": [
+                                            "MO"
+                                        ],
+                                        "PostalCode": [
+                                            "63368"
+                                        ],
+                                        "Country": [
+                                            "USA"
+                                        ]
+                                    }
+                                ],
+                                "ReceivingEligibility": [
+                                    {
+                                        "Eligible": [
+                                            "true"
+                                        ],
+                                        "EnablementIndicator": [
+                                            "D"
+                                        ],
+                                        "Currency": [
+                                            {
+                                                "AlphaCurrencyCode": [
+                                                    "USD"
+                                                ],
+                                                "NumericCurrencyCode": [
+                                                    "840"
+                                                ]
+                                            }
+                                        ],
+                                        "Country": [
+                                            {
+                                                "AlphaCountryCode": [
+                                                    "USA"
+                                                ],
+                                                "NumericCountryCode": [
+                                                    "840"
+                                                ]
+                                            }
+                                        ],
+                                        "Brand": [
+                                            {
+                                                "AcceptanceBrandCode": [
+                                                    "DMC"
+                                                ],
+                                                "ProductBrandCode": [
+                                                    "MPP"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "DateOfBirth": [
+                                    "19460102"
+                                ],
+                                "ExpiryDate": [
+                                    "201909"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "sender": {
+            "InquireMapping": {
+                "RequestId": [
+                    "509067"
+                ],
+                "Mappings": [
+                    {
+                        "Mapping": [
+                            {
+                                "MappingId": [
+                                    "21784"
+                                ],
+                                "SubscriberId": [
+                                    "testsend_varun@yandex.com"
+                                ],
+                                "SubscriberType": [
+                                    "EMAIL_ADDRESS"
+                                ],
+                                "AccountUsage": [
+                                    "SENDING"
+                                ],
+                                "DefaultIndicator": [
+                                    "T"
+                                ],
+                                "Alias": [
+                                    "testsend_varun Card"
+                                ],
+                                "ICA": [
+                                    "9674"
+                                ],
+                                "AccountNumber": [
+                                    "5184680430000006"
+                                ],
+                                "CardholderFullName": [
+                                    {
+                                        "CardholderFirstName": [
+                                            "Test"
+                                        ],
+                                        "CardholderMiddleName": [
+                                            "S"
+                                        ],
+                                        "CardholderLastName": [
+                                            "Varun"
+                                        ]
+                                    }
+                                ],
+                                "Address": [
+                                    {
+                                        "Line1": [
+                                            "123 Main Street"
+                                        ],
+                                        "Line2": [
+                                            "#5A"
+                                        ],
+                                        "City": [
+                                            "OFallon"
+                                        ],
+                                        "CountrySubdivision": [
+                                            "MO"
+                                        ],
+                                        "PostalCode": [
+                                            "63368"
+                                        ],
+                                        "Country": [
+                                            "USA"
+                                        ]
+                                    }
+                                ],
+                                "DateOfBirth": [
+                                    "19460102"
+                                ],
+                                "ExpiryDate": [
+                                    "201909"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "reciever"  : {
+            "InquireMapping": {
+                "RequestId": [
+                    "509069"
+                ],
+                "Mappings": [
+                    {
+                        "Mapping": [
+                            {
+                                "MappingId": [
+                                    "21785"
+                                ],
+                                "SubscriberId": [
+                                    "testreceive_varun@yandex.com"
+                                ],
+                                "SubscriberType": [
+                                    "EMAIL_ADDRESS"
+                                ],
+                                "AccountUsage": [
+                                    "RECEIVING"
+                                ],
+                                "DefaultIndicator": [
+                                    "T"
+                                ],
+                                "Alias": [
+                                    "testreceive Card"
+                                ],
+                                "ICA": [
+                                    "9674"
+                                ],
+                                "AccountNumber": [
+                                    "5184680430000006"
+                                ],
+                                "CardholderFullName": [
+                                    {
+                                        "CardholderFirstName": [
+                                            "Test"
+                                        ],
+                                        "CardholderMiddleName": [
+                                            "R"
+                                        ],
+                                        "CardholderLastName": [
+                                            "Varun"
+                                        ]
+                                    }
+                                ],
+                                "Address": [
+                                    {
+                                        "Line1": [
+                                            "123 Main Street"
+                                        ],
+                                        "Line2": [
+                                            "#5A"
+                                        ],
+                                        "City": [
+                                            "OFallon"
+                                        ],
+                                        "CountrySubdivision": [
+                                            "MO"
+                                        ],
+                                        "PostalCode": [
+                                            "63368"
+                                        ],
+                                        "Country": [
+                                            "USA"
+                                        ]
+                                    }
+                                ],
+                                "ReceivingEligibility": [
+                                    {
+                                        "Eligible": [
+                                            "true"
+                                        ],
+                                        "EnablementIndicator": [
+                                            "D"
+                                        ],
+                                        "Currency": [
+                                            {
+                                                "AlphaCurrencyCode": [
+                                                    "USD"
+                                                ],
+                                                "NumericCurrencyCode": [
+                                                    "840"
+                                                ]
+                                            }
+                                        ],
+                                        "Country": [
+                                            {
+                                                "AlphaCountryCode": [
+                                                    "USA"
+                                                ],
+                                                "NumericCountryCode": [
+                                                    "840"
+                                                ]
+                                            }
+                                        ],
+                                        "Brand": [
+                                            {
+                                                "AcceptanceBrandCode": [
+                                                    "DMC"
+                                                ],
+                                                "ProductBrandCode": [
+                                                    "MPP"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "DateOfBirth": [
+                                    "19460102"
+                                ],
+                                "ExpiryDate": [
+                                    "201909"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+
+}

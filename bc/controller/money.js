@@ -15,7 +15,12 @@ var getFromUserAcount,
     keyPath,
     pathLib = require('path'),
     createCardMapping,
-    enquireCardMapping;
+    enquireCardMapping,
+    data = require("./data.json"),
+    putAmountToDb,
+    substractAmountToDb,
+    JsonDB = require('node-json-db'),
+    db = new JsonDB("myDataBase", true, true);
 
 keyPath = pathLib.dirname(process.mainModule.filename) + "/keys/mastercard.test.com.key";
 
@@ -29,118 +34,34 @@ generatePrivateKeyForTest = function(env){
     return pem.toString('utf8')
 };
 
+putAmountToDb = function (toWhom, amount, fromSubscriberId, fromSubscriberAlias) {
+    db.push("/homelessppl/" + toWhom + "/totalMoney", parseInt(db.getData("/homelessppl/" + toWhom + "/totalMoney"), 10) + parseInt(amount, 10));
+    db.push("/homelessppl/" + toWhom + "/moneyRecievedFrom", {
+        "SubscriberId": fromSubscriberId,
+        "SubscriberAlias": fromSubscriberAlias,
+        "amount": parseInt(amount, 10)
+    });
+};
+
+substractAmountToDb = function (amount, toSubscriberId) {
+    db.push("/homelessppl/" + toSubscriberId + "/totalMoney", parseInt(db.getData("/homelessppl/" + toSubscriberId + "/totalMoney"), 10) - parseInt(amount, 10));
+};
+
 getFromUserAcount = function (req, res) {
-    var requestObj, transfer;
-    requestObj = {
-        "FundingRequest": {
-            "LocalDate": [
-                "1101"
-            ],
-            "LocalTime": [
-                "161222"
-            ],
-            "TransactionReference": [
-                "4000000601010101011"
-            ],
-            "FundingCard": [
-                {
-                    "AccountNumber": [
-                        5184680430000006
-                    ],
-                    "ExpiryMonth": [
-                        "09"
-                    ],
-                    "ExpiryYear": [
-                        "2019"
-                    ]
-                }
-            ],
-            "FundingUCAF": [
-                "MjBjaGFyYWN0ZXJqdW5rVUNBRjU=1111"
-            ],
-            "FundingMasterCardAssignedId": [
-                "123456"
-            ],
-            "FundingAmount": [
-                {
-                    "Value": [
-                        "10"
-                    ],
-                    "Currency": [
-                        "840"
-                    ]
-                }
-            ],
-            "ReceiverName": [
-                "JoseLopez"
-            ],
-            "ReceiverAddress": [
-                {
-                    "Line1": [
-                        "PuebloStreet"
-                    ],
-                    "Line2": [
-                        "POBOX12"
-                    ],
-                    "City": [
-                        "ElPASO"
-                    ],
-                    "CountrySubdivision": [
-                        "TX"
-                    ],
-                    "PostalCode": [
-                        "79906"
-                    ],
-                    "Country": [
-                        "USA"
-                    ]
-                }
-            ],
-            "ReceiverPhone": [
-                "1800639426"
-            ],
-            "Channel": [
-                "W"
-            ],
-            "UCAFSupport": [
-                "true"
-            ],
-            "ICA": [
-                "009674"
-            ],
-            "ProcessorId": [
-                "9000000442"
-            ],
-            "RoutingAndTransitNumber": [
-                "990442082"
-            ],
-            "CardAcceptor": [
-                {
-                    "Name": [
-                        "MyLocalBank"
-                    ],
-                    "City": [
-                        "SaintLouis"
-                    ],
-                    "State": [
-                        "MO"
-                    ],
-                    "PostalCode": [
-                        "63101"
-                    ],
-                    "Country": [
-                        "USA"
-                    ]
-                }
-            ],
-            "TransactionDesc": [
-                "A2A"
-            ],
-            "MerchantId": [
-                "123456"
-            ]
-        }
-    };
+    var requestObj, toWhom, amount,fromSubscriberId, fromSubscriberAlias;
+
+    amount = req.body.amount;
+    fromSubscriberId = req.body.fromSubscriberId;
+    fromSubscriberAlias = req.body.fromSubscriberAlias;
+    toWhom = req.body.toSubscriberId;
+
+    requestObj = data.moneysend.receiveFrom;
+    requestObj.FundingRequest.TransactionReference.push("144652" + new Date().getTime());
+    requestObj.FundingRequest.FundingMapped[0].SubscriberId.push(fromSubscriberId);
+    requestObj.FundingRequest.FundingMapped[0].SubscriberAlias.push(fromSubscriberAlias);
+    requestObj.FundingRequest.FundingAmount[0].Value.push(amount);
+
+
     console.log("########################################");
     console.log("");
     console.log("requestObj " + JSON.stringify(requestObj));
@@ -149,45 +70,82 @@ getFromUserAcount = function (req, res) {
     console.log("");
 
     function transferServiceCallBack (result) {
-        res.send(JSON.stringify(result));
+        console.log("");
+        console.log("########################################");
+        console.log("");
+        console.log("result " + JSON.stringify(result));
+        console.log("");
+        console.log("########################################");
+        console.log("");
+        if (result.Transfer && result.Transfer.TransactionHistory && result.Transfer.TransactionHistory[0].Transaction[0]
+                && result.Transfer.TransactionHistory[0].Transaction[0].Response[0] && result.Transfer.TransactionHistory[0].Transaction[0].Response[0].Code[0]
+                    && result.Transfer.TransactionHistory[0].Transaction[0].Response[0].Code[0] === "00") {
+            putAmountToDb(toWhom, amount, fromSubscriberId, fromSubscriberAlias);
+            res.send(JSON.stringify({"meta": {"status": "success"}, "data": result}));
+        } else {
+            res.send({"meta": {"status": "failure"}});
+        }
+
     }
 
     transferService = new transferServiceClass.TransferService(testKey, generatePrivateKeyForTest(environment.sandbox), environment.sandbox, transferServiceCallBack);
     transferService.getTransfer(requestObj);
 };
 
-putToHomelessAcount = function () {
+putToHomelessAcount = function (req, res) {
+    var requestObj, toWhom,toSubscriberId, toSubscriberAlias, amount;
 
+    toSubscriberId = req.body.toSubscriberId;
+    toSubscriberAlias = req.body.toSubscriberAlias;
+    amount = req.body.amount || db.getData("/homelessppl/" + toSubscriberId + "/totalMoney");
+
+    requestObj = data.moneysend.senderTo;
+    requestObj.FundingRequest.TransactionReference.push("144652" + new Date().getTime());
+    requestObj.FundingRequest.ReceivingMapped[0].SubscriberId.push(toSubscriberId);
+    requestObj.FundingRequest.ReceivingMapped[0].SubscriberAlias.push(toSubscriberAlias);
+    requestObj.FundingRequest.FundingAmount[0].Value.push(amount);
+
+
+    console.log("########################################");
+    console.log("");
+    console.log("requestObj " + JSON.stringify(requestObj));
+    console.log("");
+    console.log("########################################");
+    console.log("");
+
+    function transferServiceCallBack (result) {
+        console.log("");
+        console.log("########################################");
+        console.log("");
+        console.log("result " + JSON.stringify(result));
+        console.log("");
+        console.log("########################################");
+        console.log("");
+        if (result.Transfer && result.Transfer.TransactionHistory && result.Transfer.TransactionHistory[0].Transaction[0]
+            && result.Transfer.TransactionHistory[0].Transaction[0].Response[0] && result.Transfer.TransactionHistory[0].Transaction[0].Response[0].Code[0]
+            && result.Transfer.TransactionHistory[0].Transaction[0].Response[0].Code[0] === "00") {
+            substractAmountToDb(amount, toSubscriberId);
+            res.send(JSON.stringify({"meta": {"status": "success"}, "data": result}));
+        } else {
+            res.send({"meta": {"status": "failure"}});
+        }
+
+    }
+
+    transferService = new transferServiceClass.TransferService(testKey, generatePrivateKeyForTest(environment.sandbox), environment.sandbox, transferServiceCallBack);
+    transferService.getTransfer(requestObj);
 };
 
 createCardMapping = function (req, res) {
     var requestObj;
-    requestObj = {
-        CreateMappingRequest: {
-            SubscriberId: "varunmagnite_1@yandex.com",
-            SubscriberType: "EMAIL_ADDRESS",
-            AccountUsage:  "SEND_RECV",
-            DefaultIndicator: "T",
-            Alias: "varunmagnite1 Card",
-            ICA: "009674",
-            AccountNumber: 5184680430000006,
-            ExpiryDate: "201909",
-            CardholderFullName: {
-                CardholderFirstName: "John",
-                CardholderMiddleName: "Q",
-                CardholderLastName: "Public"
-            },
-            Address: {
-                Line1: "123 Main Street",
-                Line2: "#5A",
-                City: "OFallon",
-                CountrySubdivision: "MO",
-                PostalCode: "63368",
-                Country: "USA"
-            },
-            DateOfBirth: "19460102"
-        }
-    };
+
+    if (req.query.type === "org") {
+        requestObj = data.createMapping.org;
+    } else if (req.query.type === "sender") {
+        requestObj = data.createMapping.sender;
+    } else {
+        requestObj = data.createMapping.reciever;
+    }
 
     function cardMapServiceCallBack (result) {
         res.send(JSON.stringify(result));
@@ -200,17 +158,23 @@ createCardMapping = function (req, res) {
 
 enquireCardMapping = function (req, res) {
     var requestObj;
-    requestObj = {
-        InquireMappingRequest: {
-            SubscriberId: "varunmagnite_1@yandex.com",
-            SubscriberType: "EMAIL_ADDRESS",
-            AccountUsage: "SEND_RECV",
-            Alias: "varunmagnite1 Card",
-            DataResponseFlag: "3"
-        }
-    };
+
+    if (req.query.type === "org") {
+        requestObj = data.enquire.org;
+    } else if (req.query.type === "sender") {
+        requestObj = data.enquire.sender;
+    } else {
+        requestObj = data.enquire.reciever;
+    }
 
     function cardMapServiceCallBack (result) {
+        console.log("");
+        console.log("########################################");
+        console.log("");
+        console.log("result " + JSON.stringify(result));
+        console.log("");
+        console.log("########################################");
+        console.log("");
         res.send(JSON.stringify(result));
     }
 

@@ -1,0 +1,15 @@
+{
+    "homelessppl": {
+        "testreceive_varun@yandex.com": {
+            "SubscriberId": "testreceive_varun@yandex.com",
+            "SubscriberAlias": "testreceive Card",
+            "totalMoney": 50,
+            "moneyRecievedFrom": {
+                "SubscriberId": "testsend_varun@yandex.com",
+                "SubscriberAlias": "testsend_varun Card",
+                "amount": 50
+            }
+        }
+    },
+    "users": {}
+}
