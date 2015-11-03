@@ -13,3 +13,33 @@ curl -X POST -d '{"fromSubscriberId":"testsend_varun@yandex.com","fromSubscriber
 
 <br>
 curl -X POST -d '{"toSubscriberId":"testreceive_varun@yandex.com","toSubscriberAlias":"testreceive Card","amount":"50"}' --header "Content-Type: application/json" "http://localhost:4080/v1/money/putToHomelessAcount" 
+
+<h2> Account details </h2>
+
+        "org" : {
+            "InquireMappingRequest": {
+                "SubscriberId": "testorg_varun@yandex.com",
+                "SubscriberType": "EMAIL_ADDRESS",
+                "AccountUsage": "SEND_RECV",
+                "Alias": "testorg_varun Card",
+                "DataResponseFlag": "3"
+            }
+        },
+        "sender": {
+            "InquireMappingRequest": {
+                "SubscriberId": "testsend_varun@yandex.com",
+                "SubscriberType": "EMAIL_ADDRESS",
+                "AccountUsage": "SENDING",
+                "Alias": "testsend_varun Card",
+                "DataResponseFlag": "3"
+            }
+        },
+        "reciever": {
+            "InquireMappingRequest": {
+                "SubscriberId": "testreceive_varun@yandex.com",
+                "SubscriberType": "EMAIL_ADDRESS",
+                "AccountUsage": "RECEIVING",
+                "Alias": "testreceive Card",
+                "DataResponseFlag": "3"
+            }
+        }
