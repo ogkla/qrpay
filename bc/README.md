@@ -21,8 +21,7 @@ curl -X POST -d '{"toSubscriberId":"testreceive_varun@yandex.com","toSubscriberA
                 "SubscriberId": "testorg_varun@yandex.com",
                 "SubscriberType": "EMAIL_ADDRESS",
                 "AccountUsage": "SEND_RECV",
-                "Alias": "testorg_varun Card",
-                "DataResponseFlag": "3"
+                "Alias": "testorg_varun Card"
             }
         },
         "sender": {
@@ -30,8 +29,7 @@ curl -X POST -d '{"toSubscriberId":"testreceive_varun@yandex.com","toSubscriberA
                 "SubscriberId": "testsend_varun@yandex.com",
                 "SubscriberType": "EMAIL_ADDRESS",
                 "AccountUsage": "SENDING",
-                "Alias": "testsend_varun Card",
-                "DataResponseFlag": "3"
+                "Alias": "testsend_varun Card"
             }
         },
         "reciever": {
@@ -39,7 +37,6 @@ curl -X POST -d '{"toSubscriberId":"testreceive_varun@yandex.com","toSubscriberA
                 "SubscriberId": "testreceive_varun@yandex.com",
                 "SubscriberType": "EMAIL_ADDRESS",
                 "AccountUsage": "RECEIVING",
-                "Alias": "testreceive Card",
-                "DataResponseFlag": "3"
+                "Alias": "testreceive Card"
             }
         }
