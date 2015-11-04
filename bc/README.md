@@ -14,6 +14,13 @@ curl -X POST -d '{"fromSubscriberId":"testsend_varun@yandex.com","fromSubscriber
 <br>
 curl -X POST -d '{"toSubscriberId":"testreceive_varun@yandex.com","toSubscriberAlias":"testreceive Card","amount":"50"}' --header "Content-Type: application/json" "http://localhost:4080/v1/money/putToHomelessAcount" 
 
+<h2>Curl calls to create and get user details</h2>
+
+curl -X POST -d '{"userId":"userId1_receive_varun@yandex.com","userAlias":"userId1 Card","otherUserDetails": {"desc":"abcd","address":"abcd"}}' --header "Content-Type: application/json" "http://localhost:4080/v1/money/createuser"
+<br>
+<br>
+curl -X POST -d '{"userId":"testreceive_varun@yandex.com"}' --header "Content-Type: application/json" "http://localhost:4080/v1/money/getuserdetails" 
+
 <h2> Account details </h2>
 
         "org" : {
