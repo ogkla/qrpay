@@ -9,6 +9,16 @@
                 "SubscriberAlias": "testsend_varun Card",
                 "amount": 50
             }
+        },
+        "userId1_receive_varun@yandex.com": {
+            "SubscriberId": "userId1_receive_varun@yandex.com",
+            "SubscriberAlias": "userId1 Card",
+            "totalMoney": 0,
+            "otherUserDetails": {
+                "desc": "abcd",
+                "address": "abcd"
+            },
+            "moneyRecievedFrom": []
         }
     },
     "users": {}

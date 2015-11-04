@@ -20,7 +20,9 @@ var getFromUserAcount,
     putAmountToDb,
     substractAmountToDb,
     JsonDB = require('node-json-db'),
-    db = new JsonDB("myDataBase", true, true);
+    db = new JsonDB("myDataBase", true, true),
+    createUser,
+    createUserCardMapping;
 
 keyPath = pathLib.dirname(process.mainModule.filename) + "/keys/mastercard.test.com.key";
 
@@ -183,9 +185,45 @@ enquireCardMapping = function (req, res) {
 
 };
 
+createUserCardMapping = function (SubscriberId, SubscriberAlias, cb) {
+    var requestObj;
+
+    requestObj = data.createMapping.reciever;
+    requestObj.CreateMappingRequest.SubscriberId = SubscriberId;
+    requestObj.CreateMappingRequest.Alias = SubscriberAlias;
+
+    function cardMapServiceCallBack (result) {
+        cb(JSON.stringify(result));
+    }
+
+    cardMapService = new cardMappingServiceClass.CardMappingService(testKey, generatePrivateKeyForTest(environment.sandbox), environment.sandbox, cardMapServiceCallBack);
+    cardMapService.getCreateMapping(requestObj);
+};
+
+createUser = function (req, res) {
+    var SubscriberId, SubscriberAlias, tempUserObj, otherUserDetails;
+
+    SubscriberId = req.body.userId;
+    SubscriberAlias = req.body.userAlias;
+    otherUserDetails = req.body.otherUserDetails;
+
+    createUserCardMapping(SubscriberId, SubscriberAlias, function (result) {
+        tempUserObj = {
+            "SubscriberId": SubscriberId,
+            "SubscriberAlias": SubscriberAlias,
+            "totalMoney": 0,
+            "otherUserDetails": otherUserDetails,
+            moneyRecievedFrom:[]
+        };
+        db.push("/homelessppl/" + SubscriberId, tempUserObj);
+        res.send(JSON.stringify({"meta": {"status": "success"}, "data": result}));
+    });
+};
+
 module.exports = {
     getFromUserAcount: getFromUserAcount,
     putToHomelessAcount: putToHomelessAcount,
     createCardMapping: createCardMapping,
-    enquireCardMapping: enquireCardMapping
+    enquireCardMapping: enquireCardMapping,
+    createUser: createUser
 };
