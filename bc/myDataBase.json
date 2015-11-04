@@ -3,12 +3,19 @@
         "testreceive_varun@yandex.com": {
             "SubscriberId": "testreceive_varun@yandex.com",
             "SubscriberAlias": "testreceive Card",
-            "totalMoney": 50,
-            "moneyRecievedFrom": {
-                "SubscriberId": "testsend_varun@yandex.com",
-                "SubscriberAlias": "testsend_varun Card",
-                "amount": 50
-            }
+            "totalMoney": 150,
+            "moneyRecievedFrom": [
+                {
+                    "SubscriberId": "testsend_varun@yandex.com",
+                    "SubscriberAlias": "testsend_varun Card",
+                    "amount": 50
+                },
+                {
+                    "SubscriberId": "testsend_varun@yandex.com",
+                    "SubscriberAlias": "testsend_varun Card",
+                    "amount": 50
+                }
+            ]
         },
         "userId1_receive_varun@yandex.com": {
             "SubscriberId": "userId1_receive_varun@yandex.com",

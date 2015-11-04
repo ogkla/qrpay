@@ -37,12 +37,15 @@ generatePrivateKeyForTest = function(env){
 };
 
 putAmountToDb = function (toWhom, amount, fromSubscriberId, fromSubscriberAlias) {
-    db.push("/homelessppl/" + toWhom + "/totalMoney", parseInt(db.getData("/homelessppl/" + toWhom + "/totalMoney"), 10) + parseInt(amount, 10));
-    db.push("/homelessppl/" + toWhom + "/moneyRecievedFrom", {
+    var moenyReceived;
+    moenyReceived = db.getData("/homelessppl/" + toWhom + "/moneyRecievedFrom");
+    moenyReceived.push({
         "SubscriberId": fromSubscriberId,
         "SubscriberAlias": fromSubscriberAlias,
         "amount": parseInt(amount, 10)
     });
+    db.push("/homelessppl/" + toWhom + "/totalMoney", parseInt(db.getData("/homelessppl/" + toWhom + "/totalMoney"), 10) + parseInt(amount, 10));
+    db.push("/homelessppl/" + toWhom + "/moneyRecievedFrom", moenyReceived);
 };
 
 substractAmountToDb = function (amount, toSubscriberId) {
