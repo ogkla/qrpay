@@ -22,7 +22,8 @@ var getFromUserAcount,
     JsonDB = require('node-json-db'),
     db = new JsonDB("myDataBase", true, true),
     createUser,
-    createUserCardMapping;
+    createUserCardMapping,
+    getUserDetails;
 
 keyPath = pathLib.dirname(process.mainModule.filename) + "/keys/mastercard.test.com.key";
 
@@ -223,10 +224,19 @@ createUser = function (req, res) {
     });
 };
 
+getUserDetails = function (req, res) {
+    var SubscriberId, tempObj;
+
+    SubscriberId = req.body.userId;
+    tempObj = db.getData("/homelessppl/" + SubscriberId);
+    res.send(JSON.stringify({"meta": {"status": "success"}, "data": tempObj}));
+};
+
 module.exports = {
     getFromUserAcount: getFromUserAcount,
     putToHomelessAcount: putToHomelessAcount,
     createCardMapping: createCardMapping,
     enquireCardMapping: enquireCardMapping,
-    createUser: createUser
+    createUser: createUser,
+    getUserDetails: getUserDetails
 };

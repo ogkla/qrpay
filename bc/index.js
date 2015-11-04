@@ -37,6 +37,10 @@ app.post('/v1/money/createuser', function (req, res) {
     money.createUser(req, res);
 });
 
+app.post('/v1/money/getuserdetails', function (req, res) {
+    money.getUserDetails(req, res);
+});
+
 server = http.createServer(app);
 server.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
