@@ -21,6 +21,7 @@
 		4B5454141BE6D5EE00CC94BB /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5454131BE6D5EE00CC94BB /* FormViewController.swift */; };
 		4B5454161BE6EEEA00CC94BB /* SeekerQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5454151BE6EEEA00CC94BB /* SeekerQRViewController.swift */; };
 		4B5454181BEA3F6700CC94BB /* SeekerDetailsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5454171BEA3F6700CC94BB /* SeekerDetailsPage.swift */; };
+		4B54541A1BEAE1DE00CC94BB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5454191BEAE1DE00CC94BB /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		4B5454131BE6D5EE00CC94BB /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		4B5454151BE6EEEA00CC94BB /* SeekerQRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeekerQRViewController.swift; sourceTree = "<group>"; };
 		4B5454171BEA3F6700CC94BB /* SeekerDetailsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeekerDetailsPage.swift; sourceTree = "<group>"; };
+		4B5454191BEAE1DE00CC94BB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6B003F6079DBEC00507D4FE9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		ED879AC9FE836E5657C680FA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -128,6 +130,7 @@
 				4B4B81101BE540F9005FC078 /* Assets.xcassets */,
 				4B4B81121BE540F9005FC078 /* LaunchScreen.storyboard */,
 				4B4B81151BE540F9005FC078 /* Info.plist */,
+				4B5454191BEAE1DE00CC94BB /* Constants.swift */,
 			);
 			path = sirjee;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				4B54540F1BE6D26C00CC94BB /* RequirementViewController.swift in Sources */,
 				4B4B810A1BE540F9005FC078 /* AppDelegate.swift in Sources */,
 				4B5454121BE6D3BD00CC94BB /* Seeker.swift in Sources */,
+				4B54541A1BEAE1DE00CC94BB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

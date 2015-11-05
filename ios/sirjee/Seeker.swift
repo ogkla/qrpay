@@ -33,7 +33,7 @@ class Seeker {
         newSeeker["otherUserDetails"]?.setValue(self.image, forKey: "image")
         newSeeker["otherUserDetails"]!.setValue(self.description, forKey: "description")
         newSeeker["otherUserDetails"]!.setValue(self.requirements, forKey: "requirements");
-        Alamofire.request(.POST, "")
+        Alamofire.request(.POST, "\(Constants.serverIp)/v1/money/createuser", parameters: newSeeker)
         
     }
     
