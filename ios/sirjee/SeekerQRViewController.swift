@@ -9,13 +9,17 @@
 import UIKit
 
 class SeekerQRViewController: UIViewController {
-    var id: Int?
+    var currentSeeker: Seeker?
     
     @IBOutlet weak var qrImageView: UIImageView!
     
     
     override func viewDidLoad() {
-        print("qrcode-\(id!)")
-        qrImageView.image = UIImage(named: "qrcode-\(id!)")
+        let filter = CIFilter(name: "CIQRCodeGenerator")
+        let data = currentSeeker!.id?.dataUsingEncoding(NSISOLatin1StringEncoding, allowLossyConversion: false)
+        filter!.setValue(data, forKey: "inputMessage")
+        filter!.setValue("Q", forKey: "inputCorrectionLevel")
+        let qrcodeImage = filter!.outputImage
+        qrImageView.image = UIImage(CIImage: qrcodeImage!)
     }
 }

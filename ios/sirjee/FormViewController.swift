@@ -10,6 +10,7 @@ import UIKit
 
 class FormViewController: UIViewController {
     
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextView!
     @IBOutlet weak var nameTextField: UITextField!
     var currentSeeker : Seeker?
@@ -28,7 +29,7 @@ class FormViewController: UIViewController {
             case "saveForm":
                 let vc = segue.destinationViewController as! SeekerQRViewController
                 saveButtonClicked();
-                vc.id = currentSeeker!.id
+                vc.currentSeeker = currentSeeker
             default:
                 print("invalid segue")
         }
@@ -39,6 +40,7 @@ class FormViewController: UIViewController {
     func saveButtonClicked() {
         currentSeeker!.name = nameTextField.text
         currentSeeker!.description = descriptionTextField.text
+        currentSeeker!.id = emailTextField.text
         currentSeeker!.save()
     }
     

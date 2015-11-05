@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 
 class Seeker {
@@ -14,7 +15,7 @@ class Seeker {
     var name : String?
     var description : String?
     var requirements : [[String: AnyObject]]?
-    var id : Int?
+    var id : String?
     
     func addRequirements (amount: Int, reason : String, recurring: Bool) {
         requirements!.append([
@@ -25,22 +26,15 @@ class Seeker {
     }
     
     func save (){
-        let userDefault = NSUserDefaults.standardUserDefaults().objectForKey("allSeekers")
-        var allSeekers : NSMutableDictionary?
-        if (userDefault == nil) {
-            allSeekers = NSMutableDictionary()
-        } else {
-            allSeekers = allSeekers?.mutableCopy() as? NSMutableDictionary
-        }
-        let count = allSeekers?.allKeys.count
-        self.id = count! + 1
         let newSeeker = NSMutableDictionary();
-        newSeeker["image"] = self.image
-        newSeeker["name"] = self.name
-        newSeeker["description"] = self.description
-        newSeeker["requirements"] = self.requirements
-        newSeeker["id"] = self.id
-        allSeekers?.setValue(newSeeker, forKey: "\(id)")
+        newSeeker["userAlias"] = self.name
+        newSeeker["userId"] = self.id
+        newSeeker["otherUserDetails"] = [String: String]();
+        newSeeker["otherUserDetails"]?.setValue(self.image, forKey: "image")
+        newSeeker["otherUserDetails"]!.setValue(self.description, forKey: "description")
+        newSeeker["otherUserDetails"]!.setValue(self.requirements, forKey: "requirements");
+        Alamofire.request(.POST, "")
+        
     }
     
 }

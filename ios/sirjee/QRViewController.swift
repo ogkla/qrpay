@@ -13,6 +13,9 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     var captureSession: AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
+    var seekerId: String? = nil
+    
+    var donor : [String: String]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +37,7 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         do {
             input = try AVCaptureDeviceInput(device: captureDevice)
         } catch {
-            print("hell yes it break")
+            print("hell yes it broke")
         }
         
         
@@ -77,17 +80,21 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         if metadataObjects.type == AVMetadataObjectTypeQRCode {
             let barCodeObject = videoPreviewLayer?.transformedMetadataObjectForMetadataObject(metadataObjects)
             qrCodeFrameView?.frame = barCodeObject!.bounds
-            if metadataObjects.stringValue != nil {
-                print(metadataObjects.stringValue)
-                makePayment()
+            if metadataObjects.stringValue != nil && seekerId == nil {
+                seekerId = metadataObjects.stringValue!
+                print(seekerId);
+                performSegueWithIdentifier("seekerDetails", sender: nil)
             }
         }
         
     }
     
-    func makePayment() {
-        
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let vc = segue.destinationViewController as! SeekerDetailsPage
+        vc.seekerId = seekerId
     }
+    
+    
 
 }
 
