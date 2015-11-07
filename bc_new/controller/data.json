@@ -51,6 +51,32 @@
                 },
                 "DateOfBirth": "19460102"
             }
+        },
+        "reciever": {
+            "CreateMappingRequest": {
+                "SubscriberId": "",
+                "SubscriberType": "EMAIL_ADDRESS",
+                "AccountUsage":  "RECEIVING",
+                "DefaultIndicator": "T",
+                "Alias": "",
+                "ICA": "009674",
+                "AccountNumber": 5184680430000006,
+                "ExpiryDate": "201909",
+                "CardholderFullName": {
+                    "CardholderFirstName": "Homeless",
+                    "CardholderMiddleName": "R",
+                    "CardholderLastName": "Ppl"
+                },
+                "Address": {
+                    "Line1": "123 Main Street",
+                    "Line2": "#5A",
+                    "City": "OFallon",
+                    "CountrySubdivision": "MO",
+                    "PostalCode": "63368",
+                    "Country": "USA"
+                },
+                "DateOfBirth": "19460102"
+            }
         }
     },
     "enquire": {
@@ -69,6 +95,15 @@
                 "SubscriberType": "EMAIL_ADDRESS",
                 "AccountUsage": "SENDING",
                 "Alias": "Homeless help Card",
+                "DataResponseFlag": "3"
+            }
+        },
+        "reciever": {
+            "InquireMappingRequest": {
+                "SubscriberId": "",
+                "SubscriberType": "EMAIL_ADDRESS",
+                "AccountUsage": "RECEIVING",
+                "Alias": "",
                 "DataResponseFlag": "3"
             }
         }
