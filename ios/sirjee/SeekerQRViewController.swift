@@ -22,4 +22,10 @@ class SeekerQRViewController: UIViewController {
         let qrcodeImage = filter!.outputImage
         qrImageView.image = UIImage(CIImage: qrcodeImage!)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let vc = segue.destinationViewController as! SeekerDetailsPage
+        vc.seeker = currentSeeker!
+        vc.isOwner = true
+    }
 }

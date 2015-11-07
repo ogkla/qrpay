@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		276A8F4DDF7CDF28368C099B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED879AC9FE836E5657C680FA /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4B4B52F71BEC57C900277ED1 /* PayDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B52F61BEC57C900277ED1 /* PayDetailsViewController.swift */; };
+		4B4B52F91BEC587F00277ED1 /* payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B52F81BEC587F00277ED1 /* payment.swift */; };
 		4B4B810A1BE540F9005FC078 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B81091BE540F9005FC078 /* AppDelegate.swift */; };
 		4B4B810C1BE540F9005FC078 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B810B1BE540F9005FC078 /* QRViewController.swift */; };
 		4B4B810F1BE540F9005FC078 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4B810D1BE540F9005FC078 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		194A7B15A6EC53CC8DA126E5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		4B4B52F61BEC57C900277ED1 /* PayDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayDetailsViewController.swift; sourceTree = "<group>"; };
+		4B4B52F81BEC587F00277ED1 /* payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = payment.swift; sourceTree = "<group>"; };
 		4B4B81061BE540F9005FC078 /* sirjee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sirjee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4B81091BE540F9005FC078 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B4B810B1BE540F9005FC078 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 				4B4B81091BE540F9005FC078 /* AppDelegate.swift */,
 				4B4B810B1BE540F9005FC078 /* QRViewController.swift */,
 				4B4B810D1BE540F9005FC078 /* Main.storyboard */,
+				4B4B52F61BEC57C900277ED1 /* PayDetailsViewController.swift */,
 				4B5454171BEA3F6700CC94BB /* SeekerDetailsPage.swift */,
 				4B5454151BE6EEEA00CC94BB /* SeekerQRViewController.swift */,
 				4B5454131BE6D5EE00CC94BB /* FormViewController.swift */,
@@ -157,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				4B5454111BE6D3BD00CC94BB /* Seeker.swift */,
+				4B4B52F81BEC587F00277ED1 /* payment.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4B52F91BEC587F00277ED1 /* payment.swift in Sources */,
 				4B5454161BE6EEEA00CC94BB /* SeekerQRViewController.swift in Sources */,
 				4B5454141BE6D5EE00CC94BB /* FormViewController.swift in Sources */,
 				4B4B810C1BE540F9005FC078 /* QRViewController.swift in Sources */,
@@ -367,6 +374,7 @@
 				4B54540F1BE6D26C00CC94BB /* RequirementViewController.swift in Sources */,
 				4B4B810A1BE540F9005FC078 /* AppDelegate.swift in Sources */,
 				4B5454121BE6D3BD00CC94BB /* Seeker.swift in Sources */,
+				4B4B52F71BEC57C900277ED1 /* PayDetailsViewController.swift in Sources */,
 				4B54541A1BEAE1DE00CC94BB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

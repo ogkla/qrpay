@@ -17,27 +17,37 @@ app.use(express.methodOverride());
 app.use(app.router);
 
 
+app.get('/test', function (req, res) {
+	console.log("GET :: /test");
+	res.send("yeah it works");
+});
 app.post('/v1/money/getfromuseracount', function (req, res) {
+    console.log("POST:: /v1/money/getfromuseracount");
     money.getFromUserAcount(req, res);
 });
 
 app.post('/v1/money/puttohomelessacount', function (req, res) {
+    console.log("POST:: /v1/money/puttohomelessacount");
     money.putToHomelessAcount(req, res);
 });
 
 app.post('/v1/money/createmappedcard', function (req, res) {
+    console.log("POST:: /v1/money/createmappedcard");
     money.createCardMapping(req, res);
 });
 
 app.post('/v1/money/enquiremappedcard', function (req, res) {
+    console.log("POST:: /v1/money/enquiremappedcard");
     money.enquireCardMapping(req, res);
 });
 
 app.post('/v1/money/createuser', function (req, res) {
+    console.log("POST:: /v1/money/createuser");
     money.createUser(req, res);
 });
 
 app.post('/v1/money/getuserdetails', function (req, res) {
+    console.log("POST:: /v1/money/getuserdetails");
     money.getUserDetails(req, res);
 });
 
