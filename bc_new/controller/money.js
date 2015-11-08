@@ -49,7 +49,11 @@ putAmountToDb = function (toWhom, amount, fromSubscriberId, fromSubscriberAlias)
     db.push("/homelessppl/" + toWhom + "/moneyRecievedFrom", moenyReceived);
 };
 
-substractAmountToDb = function (amount, toSubscriberId) {
+substractAmountToDb = function (amount, merchant, toSubscriberId) {
+    var merchantValues;
+    merchantValues = db.getData("/homelessppl/" + toSubscriberId + "/merchant");
+    merchantValues.push(merchant);
+    db.push("/homelessppl/" + toSubscriberId + "/merchant", merchantValues);
     db.push("/homelessppl/" + toSubscriberId + "/totalMoney", parseInt(db.getData("/homelessppl/" + toSubscriberId + "/totalMoney"), 10) - parseInt(amount, 10));
 };
 
@@ -99,10 +103,11 @@ getFromUserAcount = function (req, res) {
 };
 
 putToHomelessAcount = function (req, res) {
-    var requestObj, toWhom,toSubscriberId, toSubscriberAlias, amount;
+    var requestObj, toWhom,toSubscriberId, toSubscriberAlias, amount, merchant;
 
     toSubscriberId = req.body.toSubscriberId;
     toSubscriberAlias = req.body.toSubscriberAlias;
+    merchant = req.body.merchant || "";
     amount = req.body.amount || db.getData("/homelessppl/" + toSubscriberId + "/totalMoney");
 
     requestObj = data.moneysend.senderTo;
@@ -130,7 +135,7 @@ putToHomelessAcount = function (req, res) {
         if (result.Transfer && result.Transfer.TransactionHistory && result.Transfer.TransactionHistory[0].Transaction[0]
             && result.Transfer.TransactionHistory[0].Transaction[0].Response[0] && result.Transfer.TransactionHistory[0].Transaction[0].Response[0].Code[0]
             && result.Transfer.TransactionHistory[0].Transaction[0].Response[0].Code[0] === "00") {
-            substractAmountToDb(amount, toSubscriberId);
+            substractAmountToDb(amount, merchant, toSubscriberId);
             res.send(JSON.stringify({"meta": {"status": "success"}, "data": result}));
         } else {
             res.send({"meta": {"status": "failure"}});
