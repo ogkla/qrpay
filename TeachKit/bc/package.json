@@ -1,0 +1,17 @@
+{
+  "name": "teachkit",
+  "version": "1.0.0",
+  "description": "talks to ibm watson",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "dependencies": {
+    "watson-developer-cloud" : "*",
+    "request": "*",
+    "async" : "*",
+    "express": "3.2.6"
+  },
+  "author": "",
+  "license": "ISC"
+}

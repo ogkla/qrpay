@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="TeachKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHC-0Q-ojR">
+                                <rect key="frame" x="5" y="25" width="590" height="415"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4u5-qR-ePn">
+                                <rect key="frame" x="5" y="445" width="590" height="150"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="M8D-TU-tyG"/>
+                                </constraints>
+                                <string key="text">Tom, Dick and Harry run around a circular track starting from the same point simultaneously and in the same direction at speeds of 4 kmph, 6 kmph and 8 kmph respectively. If the length of the track is 400 meters, when will Tom, Dick and Harry meet at the starting point for the first time after they started the race?</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqM-Z7-2sn">
+                                <rect key="frame" x="543" y="25" width="32" height="32"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="D1j-B2-hay"/>
+                                    <constraint firstAttribute="width" constant="32" id="VcH-u5-YbK"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="cross"/>
+                                <connections>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="idb-Kk-DxN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8n5-v1-XFe">
+                                <rect key="frame" x="25" y="395" width="550" height="40"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bMU-Z0-c2I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.36825819570000001" blue="0.055030652489999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tL-YF-dbm">
+                                <rect key="frame" x="506" y="25" width="32" height="32"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="Ecs-NV-PlC"/>
+                                    <constraint firstAttribute="height" constant="32" id="GRR-rh-DgU"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="tick"/>
+                                <connections>
+                                    <action selector="doTheShit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EWk-Ea-vK7"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpQ-gY-owg">
+                                <rect key="frame" x="30" y="25" width="60" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.019972271610000002" green="0.67402606600000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="uKr-qG-9hy"/>
+                                    <constraint firstAttribute="height" constant="30" id="unz-Ok-X1C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startExecuting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xeW-OO-Qk3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="4u5-qR-ePn" secondAttribute="bottom" constant="5" id="2QJ-TT-B4l"/>
+                            <constraint firstItem="4u5-qR-ePn" firstAttribute="top" secondItem="8n5-v1-XFe" secondAttribute="bottom" constant="10" id="2aM-ug-Oft"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4u5-qR-ePn" secondAttribute="bottom" constant="5" id="5zh-49-7Xv"/>
+                            <constraint firstAttribute="trailing" secondItem="XHC-0Q-ojR" secondAttribute="trailing" constant="5" id="7Et-8j-dUH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8n5-v1-XFe" secondAttribute="trailing" constant="5" id="8Nd-TQ-v5y"/>
+                            <constraint firstItem="2tL-YF-dbm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="GJQ-9H-O0Y"/>
+                            <constraint firstItem="XHC-0Q-ojR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="HoV-y8-7Yh"/>
+                            <constraint firstItem="aqM-Z7-2sn" firstAttribute="leading" secondItem="2tL-YF-dbm" secondAttribute="trailing" constant="5" id="MSt-IB-7n3"/>
+                            <constraint firstItem="YpQ-gY-owg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="Tq8-hn-0fs"/>
+                            <constraint firstItem="4u5-qR-ePn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="UCN-1N-DcK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aqM-Z7-2sn" secondAttribute="trailing" constant="5" id="XBd-zN-e9L"/>
+                            <constraint firstItem="8n5-v1-XFe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="edu-5A-jnc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4u5-qR-ePn" secondAttribute="bottom" constant="5" id="hCM-cZ-d0M"/>
+                            <constraint firstAttribute="trailing" secondItem="4u5-qR-ePn" secondAttribute="trailing" constant="5" id="it8-PR-0SD"/>
+                            <constraint firstItem="XHC-0Q-ojR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="jWe-Z0-NbV"/>
+                            <constraint firstItem="YpQ-gY-owg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="peU-av-6OI"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="4u5-qR-ePn" secondAttribute="bottom" constant="5" id="qs6-ts-CNu"/>
+                            <constraint firstItem="4u5-qR-ePn" firstAttribute="top" secondItem="XHC-0Q-ojR" secondAttribute="bottom" constant="5" id="usz-78-rg3"/>
+                            <constraint firstItem="aqM-Z7-2sn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="wX8-Nf-pQm"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="qs6-ts-CNu"/>
+                                <exclude reference="5zh-49-7Xv"/>
+                                <exclude reference="hCM-cZ-d0M"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="drawCanvas" destination="XHC-0Q-ojR" id="3Kf-3J-c4T"/>
+                        <outlet property="problemTextView" destination="4u5-qR-ePn" id="KN8-Sp-b68"/>
+                        <outlet property="startButton" destination="YpQ-gY-owg" id="cpm-uM-wnd"/>
+                        <outlet property="timeTakenLabel" destination="8n5-v1-XFe" id="2du-MO-PKg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cross" width="48" height="48"/>
+        <image name="tick" width="48" height="48"/>
+    </resources>
+</document>
