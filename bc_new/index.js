@@ -16,6 +16,9 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 
+app.get('/v1/test', function(req, res) {
+    res.send('testing');
+});
 
 app.post('/v1/money/getfromuseracount', function (req, res) {
     money.getFromUserAcount(req, res);

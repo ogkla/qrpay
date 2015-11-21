@@ -212,6 +212,9 @@ createUserCardMapping = function (SubscriberId, SubscriberAlias, cb) {
 createUser = function (req, res) {
     var SubscriberId, SubscriberAlias, tempUserObj, otherUserDetails;
 
+    console.log("HHHHHHHHHHHH");
+    console.log(req.body);
+
     SubscriberId = req.body.userId;
     SubscriberAlias = req.body.userAlias;
     otherUserDetails = req.body.otherUserDetails;

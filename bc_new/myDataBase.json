@@ -1,4 +1,321 @@
 {
-    "homelessppl": {},
+    "homelessppl": {
+        "ljlsfjldf@ljljksdf.com": {
+            "SubscriberId": "ljlsfjldf@ljljksdf.com",
+            "SubscriberAlias": "golak 4th attempt",
+            "totalMoney": 0,
+            "otherUserDetails": {
+                "requirements": [
+                    "Daily",
+                    "23",
+                    "food"
+                ],
+                "description": "zlfjlsdflsdfffds"
+            },
+            "moneyRecievedFrom": []
+        },
+        "school@googl.com": {
+            "SubscriberId": "school@googl.com",
+            "SubscriberAlias": "Golak 8th attempt",
+            "totalMoney": 0,
+            "otherUserDetails": {
+                "requirements": [
+                    "Daily",
+                    "10",
+                    "food",
+                    "Monthly",
+                    "20",
+                    "rent"
+                ],
+                "description": "klsdkfsdlf"
+            },
+            "moneyRecievedFrom": []
+        },
+        "dsfdsfdsf@sdf.com": {
+            "SubscriberId": "dsfdsfdsf@sdf.com",
+            "SubscriberAlias": "sdfdsfsd",
+            "totalMoney": 0,
+            "otherUserDetails": {
+                "requirements": [
+                    "Weekly",
+                    "23",
+                    "ljldjf",
+                    "Monthly",
+                    "23",
+                    "lllk"
+                ],
+                "description": "dsfdsfdsfdsfdsf"
+            },
+            "moneyRecievedFrom": []
+        },
+        "thatere@dfdfd.com": {
+            "SubscriberId": "thatere@dfdfd.com",
+            "SubscriberAlias": "7th attempt",
+            "totalMoney": 0,
+            "otherUserDetails": "{\"requirements\":[{\"reason\":\"lklkdf\",\"recurring\":\"Daily\",\"amount\":\"10\"},{\"reason\":\"rent\",\"recurring\":\"Monthly\",\"amount\":\"20\"}],\"description\":\"sdfdsfdsf\"}",
+            "moneyRecievedFrom": []
+        },
+        "golak20th@golak.org": {
+            "SubscriberId": "golak20th@golak.org",
+            "SubscriberAlias": "golak 10the attmept",
+            "totalMoney": 12,
+            "otherUserDetails": "{\"requirements\":[{\"reason\":\"food\",\"recurring\":\"Weekly\",\"amount\":\"10\"},{\"reason\":\"rent\",\"recurring\":\"Monthly\",\"amount\":\"100\"}],\"description\":\"myself is myself\"}",
+            "moneyRecievedFrom": [
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 2
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 2
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 2
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 2
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 2
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 2
+                }
+            ]
+        },
+        "golak4thattempt@golak.org": {
+            "SubscriberId": "golak4thattempt@golak.org",
+            "SubscriberAlias": "help you golak",
+            "totalMoney": 0,
+            "otherUserDetails": "{\"requirements\":[{\"reason\":\"food\",\"recurring\":\"Daily\",\"amount\":\"10\"},{\"reason\":\"rent\",\"recurring\":\"Monthly\",\"amount\":\"12\"}],\"description\":\"my self sdsds\"}",
+            "moneyRecievedFrom": []
+        },
+        "gordon@ramsay.com": {
+            "SubscriberId": "gordon@ramsay.com",
+            "SubscriberAlias": "Gordon Ramsay",
+            "totalMoney": 2,
+            "otherUserDetails": "{\"requirements\":[{\"reason\":\"Food\",\"recurring\":\"Daily\",\"amount\":\"10\"},{\"reason\":\"Rent\",\"recurring\":\"Monthly\",\"amount\":\"100\"}],\"description\":\"Want a muffin\"}",
+            "moneyRecievedFrom": [
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 2
+                }
+            ]
+        },
+        "guest@stars.com": {
+            "SubscriberId": "guest@stars.com",
+            "SubscriberAlias": "guests stars",
+            "totalMoney": 0,
+            "otherUserDetails": "{\"requirements\":[{\"reason\":\"foog\",\"recurring\":\"Daily\",\"amount\":\"10\"},{\"reason\":\"Rent\",\"recurring\":\"Weekly\",\"amount\":\"100\"}],\"description\":\"Guests stars\"}",
+            "moneyRecievedFrom": []
+        },
+        "movie@ticket.com": {
+            "SubscriberId": "movie@ticket.com",
+            "SubscriberAlias": "Movie ticket",
+            "totalMoney": 2,
+            "otherUserDetails": "{\"requirements\":[{\"reason\":\"Food\",\"recurring\":\"Weekly\",\"amount\":\"10\"},{\"reason\":\"Rent\",\"recurring\":\"Monthly\",\"amount\":\"12\"}],\"description\":\"Movie teicke\"}",
+            "moneyRecievedFrom": [
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 2
+                }
+            ]
+        },
+        "mathew@hayden.com": {
+            "SubscriberId": "mathew@hayden.com",
+            "SubscriberAlias": "mathew hayden",
+            "totalMoney": 6,
+            "otherUserDetails": "{\"requirements\":[{\"reason\":\"Food\",\"recurring\":\"Daily\",\"amount\":\"10\"},{\"reason\":\"Rent\",\"recurring\":\"Monthly\",\"amount\":\"11\"}],\"description\":\"I am mathew hayden\"}",
+            "moneyRecievedFrom": [
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 2
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 1
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 2
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 1
+                }
+            ]
+        },
+        "goo@nane.com": {
+            "SubscriberId": "goo@nane.com",
+            "SubscriberAlias": "Goo Nane",
+            "totalMoney": 0,
+            "otherUserDetails": "{\"requirements\":[{\"reason\":\"asmre\",\"recurring\":\"Daily\",\"amount\":\"10\"},{\"reason\":\"land\",\"recurring\":\"Daily\",\"amount\":\"30\"}],\"description\":\"Goo nane masata murane\"}",
+            "moneyRecievedFrom": []
+        },
+        "sdfsdf@sdfds.com": {
+            "SubscriberId": "sdfsdf@sdfds.com",
+            "SubscriberAlias": "dsdf",
+            "totalMoney": 3,
+            "otherUserDetails": "{\"requirements\":[{\"reason\":\"food\",\"recurring\":\"Daily\",\"amount\":\"2\"},{\"reason\":\"dinner\",\"recurring\":\"Daily\",\"amount\":\"5\"}],\"description\":\"dsfdsfdsfdsf\"}",
+            "moneyRecievedFrom": [
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 1
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 2
+                }
+            ]
+        },
+        "macdonals@mcshaw.com": {
+            "SubscriberId": "macdonals@mcshaw.com",
+            "SubscriberAlias": "macdonals machaw",
+            "totalMoney": 1,
+            "otherUserDetails": "{\"requirements\":[{\"reason\":\"food\",\"recurring\":\"Daily\",\"amount\":\"10\"},{\"reason\":\"Travel\",\"recurring\":\"Daily\",\"amount\":\"4\"}],\"description\":\"I am macshaw\"}",
+            "moneyRecievedFrom": [
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 2
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 1
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 5
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 2
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 5
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 2
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 5
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 2
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 5
+                }
+            ]
+        },
+        "007@bond.com": {
+            "SubscriberId": "007@bond.com",
+            "SubscriberAlias": "James Bond",
+            "totalMoney": 2,
+            "otherUserDetails": "{\"requirements\":[{\"reason\":\"kill\",\"recurring\":\"Daily\",\"amount\":\"5\"},{\"reason\":\"martini\",\"recurring\":\"Weekly\",\"amount\":\"10\"}],\"description\":\"I am bond james bond\"}",
+            "moneyRecievedFrom": [
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 5
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 2
+                }
+            ]
+        },
+        "markand@deshpande": {
+            "SubscriberId": "markand@deshpande",
+            "SubscriberAlias": "Markand deshpande",
+            "totalMoney": 1,
+            "otherUserDetails": "{\"requirements\":[{\"reason\":\"Food\",\"recurring\":\"Daily\",\"amount\":\"5\"},{\"reason\":\"Rent\",\"recurring\":\"Monthly\",\"amount\":\"100\"}],\"description\":\"I lost my job. I was an engineer\"}",
+            "moneyRecievedFrom": [
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 5
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 1
+                }
+            ]
+        },
+        "margart@rmail.com": {
+            "SubscriberId": "margart@rmail.com",
+            "SubscriberAlias": "Margaret",
+            "totalMoney": 5,
+            "otherUserDetails": "{\"requirements\":[{\"reason\":\"food\",\"recurring\":\"Daily\",\"amount\":\"10\"},{\"reason\":\"Rent\",\"recurring\":\"Weekly\",\"amount\":\"5\"}],\"description\":\"I have lost my job\"}",
+            "moneyRecievedFrom": [
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 5
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 5
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 5
+                }
+            ]
+        },
+        "siddesh@dfdf.com": {
+            "SubscriberId": "siddesh@dfdf.com",
+            "SubscriberAlias": "Siddesh",
+            "totalMoney": 2,
+            "otherUserDetails": "{\"requirements\":[{\"reason\":\"Food\",\"recurring\":\"Daily\",\"amount\":\"4\"},{\"reason\":\"Rent\",\"recurring\":\"Weekly\",\"amount\":\"100\"}],\"description\":\"I lost my job\"}",
+            "moneyRecievedFrom": [
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 5
+                },
+                {
+                    "SubscriberId": "homeless_ppls_helper@mastercard.com",
+                    "SubscriberAlias": "Homeless help Card",
+                    "amount": 1
+                }
+            ]
+        }
+    },
     "users": {}
 }
